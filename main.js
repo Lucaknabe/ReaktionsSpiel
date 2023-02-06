@@ -49,6 +49,12 @@ function reaktionsClick() {
 
 }
 
+// für git:
+//git status
+//git add .
+//git commit -m "test"
+// git push
+
 
 
  //server start: npm run dev
