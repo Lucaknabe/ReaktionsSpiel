@@ -11,7 +11,7 @@ function reaktionsBtn() {
   randomNumberOutput = Math.floor(Math.random() * 5000);
   console.log(randomNumberOutput);
   setTimeout(reaktionsClick, randomNumberOutput);
-  scoreboard.sort(function (a, b) { return a - b });
+  
 }
 var scoreboard = [];
 
@@ -34,6 +34,7 @@ function reaktionsClick() {
     var time_later = date2.getTime();
     const timeResult = (time_later - time_now);
     scoreboard.push(timeResult);
+    scoreboard.sort(function (a, b) { return a - b });
     document.getElementById("Scoreboard").innerHTML = JSON.stringify(scoreboard);
     console.log(scoreboard);
     document.getElementById("timerResult").innerHTML = timeResult + "ms";

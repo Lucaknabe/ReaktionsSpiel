@@ -23,6 +23,13 @@
 
 }
 
+#Ergebnis{
+  margin:auto;
+  font-size: 40px;
+}
+
+
+
 #ButtonDiv{
   display:flex;
   flex-direction: column;
@@ -64,7 +71,13 @@ h1 {
   text-align: center;
 }
 
-#Scoreboard_Div
+#Scoreboard_Div {
+  margin:auto;
+  display: flex;
+  flex-flow: row;
+  font-size: 40px;
+
+}
 
 
 
