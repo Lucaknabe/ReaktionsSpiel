@@ -9,6 +9,7 @@ var randomNumberOutput;
 var scoreboard = [];
 var top_10 = [];
 var Filteredtop10 = [];
+
 console.log("Filteredtop10 init",Filteredtop10)
 
 
@@ -53,15 +54,35 @@ function reaktionsClick() {
     console.log("FilterTop 10 nach For Schleife",Filteredtop10)
     top_10.filter(Number);
     document.getElementById(0).innerHTML = JSON.stringify(Filteredtop10[0]);
-    document.getElementById(1).innerHTML = JSON.stringify(Filteredtop10[1]);
-    document.getElementById(2).innerHTML = JSON.stringify(Filteredtop10[2]);
-    document.getElementById(3).innerHTML = JSON.stringify(Filteredtop10[3]);
-    document.getElementById(4).innerHTML = JSON.stringify(Filteredtop10[4]);
-    document.getElementById(5).innerHTML = JSON.stringify(Filteredtop10[5]);
-    document.getElementById(6).innerHTML = JSON.stringify(Filteredtop10[6]);
-    document.getElementById(7).innerHTML = JSON.stringify(Filteredtop10[7]);
-    document.getElementById(8).innerHTML = JSON.stringify(Filteredtop10[8]);
-    document.getElementById(9).innerHTML = JSON.stringify(Filteredtop10[9]);
+
+     if (Filteredtop10.length === 2){
+     document.getElementById(1).innerHTML = JSON.stringify(Filteredtop10[1]);
+    }else if (Filteredtop10.length === 3){
+      document.getElementById(2).innerHTML = JSON.stringify(Filteredtop10[2]);
+    }else if (Filteredtop10.length === 4){
+      document.getElementById(3).innerHTML = JSON.stringify(Filteredtop10[3]);
+    }else if (Filteredtop10.length === 5){
+      document.getElementById(4).innerHTML = JSON.stringify(Filteredtop10[4]);
+    }else if (Filteredtop10.length === 6){
+      document.getElementById(5).innerHTML = JSON.stringify(Filteredtop10[5]);
+    }else if (Filteredtop10.length === 7){
+      document.getElementById(6).innerHTML = JSON.stringify(Filteredtop10[6]);
+    }else if (Filteredtop10.length === 8){
+      document.getElementById(7).innerHTML = JSON.stringify(Filteredtop10[7]);
+    }else if (Filteredtop10.length === 9){
+      document.getElementById(8).innerHTML = JSON.stringify(Filteredtop10[8]);
+    }else if (Filteredtop10.length === 10){
+      document.getElementById(9).innerHTML = JSON.stringify(Filteredtop10[9]);
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     console.log("scoreboard",scoreboard);
     document.getElementById("timerResult").innerHTML = timeResult + "ms";
     document.getElementById("ReaktionsTest").style.background = "#f5f5f5";
@@ -89,7 +110,8 @@ function reaktionsClick() {
 
 // PROBLEME:
 
-// 
+// farbe(Welche Farbe würde am besten passen??????)
+// undefined values wenn leaderboard gezeigt wird velleicht mit if else if else checken ob die Filteredtop10 eine bestimmte länge hat und dann bei html definieren
 
 
 //PLÄNE:
