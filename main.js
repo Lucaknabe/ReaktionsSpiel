@@ -6,22 +6,21 @@ document.getElementById("timerResult").innerHTML;
 window.reaktionsBtn = reaktionsBtn;
 
 var randomNumberOutput;
+var scoreboard = [];
+var top_10 = [];
+var Filteredtop10 = [];
+console.log("Filteredtop10 init",Filteredtop10)
+
 
 function reaktionsBtn() {
   randomNumberOutput = Math.floor(Math.random() * (5000 - 1000) + 1000);
-  console.log(randomNumberOutput);
+  console.log("randomNumberOutput",randomNumberOutput );
   setTimeout(reaktionsClick, randomNumberOutput);
   
 }
-var scoreboard = [];
-var top_10 = [];
 
 
-// scoreboard.forEach(createHTML);
 
-// function createHTML(item){
-//   document.createElement("h1");
-// }
 
 function reaktionsClick() {
   document.getElementById("ReaktionsTest").style.background = '#008000';
@@ -35,24 +34,41 @@ function reaktionsClick() {
     const timeResult = (time_later - time_now);
     scoreboard.push(timeResult);  
     scoreboard.sort(function (a, b) { return a - b });
-    for (let i = 0; (i <=10 || i < scoreboard.length -1 ); i++){
-      console.log("scoreboard länge",scoreboard.length);
-      top_10[i] = scoreboard[i];
-       top_10.filter(obj => obj);
-       console.log("top_10[i]",top_10[i]);
-    //  top_10.filter(Element => Element !== null);
-    }
-    // if (top_10.length >=11){
-    //   top_10.splice(10, 1);
-    // }
     
-    document.getElementById("Top10").innerHTML = JSON.stringify(top_10);
-    console.log(scoreboard);
+    
+    
+    
+    for (let i = 0; i <=10 || i < scoreboard.length -1 ; i++){
+      console.log("scoreboard länge",scoreboard.length);
+      top_10[i] = scoreboard[i];     
+      Filteredtop10 =top_10.filter(Number);
+      console.log("top_10[i]",i);
+
+      if (top_10.length =9){
+        top_10.pop;
+      }
+       Filteredtop10.filter(Boolean);
+
+    }
+    console.log("FilterTop 10 nach For Schleife",Filteredtop10)
+    top_10.filter(Number);
+    document.getElementById(0).innerHTML = JSON.stringify(Filteredtop10[0]);
+    document.getElementById(1).innerHTML = JSON.stringify(Filteredtop10[1]);
+    document.getElementById(2).innerHTML = JSON.stringify(Filteredtop10[2]);
+    document.getElementById(3).innerHTML = JSON.stringify(Filteredtop10[3]);
+    document.getElementById(4).innerHTML = JSON.stringify(Filteredtop10[4]);
+    document.getElementById(5).innerHTML = JSON.stringify(Filteredtop10[5]);
+    document.getElementById(6).innerHTML = JSON.stringify(Filteredtop10[6]);
+    document.getElementById(7).innerHTML = JSON.stringify(Filteredtop10[7]);
+    document.getElementById(8).innerHTML = JSON.stringify(Filteredtop10[8]);
+    document.getElementById(9).innerHTML = JSON.stringify(Filteredtop10[9]);
+    console.log("scoreboard",scoreboard);
     document.getElementById("timerResult").innerHTML = timeResult + "ms";
     document.getElementById("ReaktionsTest").style.background = "#f5f5f5";
+    document.getElementById("ReaktionsTest").style.backgroundColor = "#5b6fe2"
     document.getElementById("ReaktionsTest").innerHTML = "Drücke diesen button wenn er grün ist"
     // document.getElementById("ReaktionsButton").innerHTML = "Start Game"
-    console.log(timeResult);
+    console.log("timeResult",timeResult);
     ReaktionsTest.removeEventListener("click", Cal_Result)
   }
 
