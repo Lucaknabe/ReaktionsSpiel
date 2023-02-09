@@ -7,6 +7,7 @@ Vorstellung: name,schule und klasse , praktikum, , interessen, vorkentnisse.
 
 
 Notizen und pläne:
+Vor der Vorstellung sage etwas über reactionszeit und wie es bei eden anders ist.
 Bei interessen erkären warum du dich für das interessiert (mit velleicht ein bespiel)
 Bei Vorkenntnisse sag das du keine vorkenntnisse hattest aber hier programmieren gelernt hast
 Bei Aufgabe zeig das scoreboard links (falls fertig) und das end design

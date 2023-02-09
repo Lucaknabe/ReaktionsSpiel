@@ -35,53 +35,61 @@ function reaktionsClick() {
     const timeResult = (time_later - time_now);
     scoreboard.push(timeResult);  
     scoreboard.sort(function (a, b) { return a - b });
+    console.log("scoreboard")
     
     
     
     
-    for (let i = 0; i <=10 || i < scoreboard.length -1 ; i++){
-      console.log("scoreboard länge",scoreboard.length);
+    for (let i = 0; i < scoreboard.length  ; i++){
+      // console.log("scoreboard länge",scoreboard.length);
       top_10[i] = scoreboard[i];     
       Filteredtop10 =top_10.filter(Number);
-      console.log("top_10[i]",i);
+      
+      // console.log("top_10[i]",i);
 
-      if (top_10.length =9){
-        top_10.pop;
+      if (scoreboard.length =11){
+        scoreboard.pop;
       }
-       Filteredtop10.filter(Boolean);
-
+      //  Filteredtop10.filter(Boolean);
+       
+     document.getElementById(i).innerHTML = JSON.stringify(scoreboard[i]) + " ms";
+     console.log("i",i);
     }
     console.log("FilterTop 10 nach For Schleife",Filteredtop10)
+    console.log("FilteredTop 10 länge", Filteredtop10.length)
     top_10.filter(Number);
-    document.getElementById(0).innerHTML = JSON.stringify(Filteredtop10[0]);
-
-     if (Filteredtop10.length === 2){
-     document.getElementById(1).innerHTML = JSON.stringify(Filteredtop10[1]);
-    }else if (Filteredtop10.length === 3){
-      document.getElementById(2).innerHTML = JSON.stringify(Filteredtop10[2]);
-    }else if (Filteredtop10.length === 4){
-      document.getElementById(3).innerHTML = JSON.stringify(Filteredtop10[3]);
-    }else if (Filteredtop10.length === 5){
-      document.getElementById(4).innerHTML = JSON.stringify(Filteredtop10[4]);
-    }else if (Filteredtop10.length === 6){
-      document.getElementById(5).innerHTML = JSON.stringify(Filteredtop10[5]);
-    }else if (Filteredtop10.length === 7){
-      document.getElementById(6).innerHTML = JSON.stringify(Filteredtop10[6]);
-    }else if (Filteredtop10.length === 8){
-      document.getElementById(7).innerHTML = JSON.stringify(Filteredtop10[7]);
-    }else if (Filteredtop10.length === 9){
-      document.getElementById(8).innerHTML = JSON.stringify(Filteredtop10[8]);
-    }else if (Filteredtop10.length === 10){
-      document.getElementById(9).innerHTML = JSON.stringify(Filteredtop10[9]);
-    }
-    
-    
-    
-    
-    
-    
-    
-    
+    // if (Filteredtop10.length === 1){ 
+    //  document.getElementById("0").innerHTML = JSON.stringify(Filteredtop10[0]);
+    //  console.log("Filteredtop100", Filteredtop10[0]) 
+    // }else if (Filteredtop10.length === 2){
+    //  document.getElementById("1").innerHTML = JSON.stringify(Filteredtop10[1]);
+    //  console.log("Filteredtop101", Filteredtop10[1]) 
+    // }else if (Filteredtop10.length === 3){
+    //  document.getElementById("2").innerHTML = JSON.stringify(Filteredtop10[2]);
+    //  console.log("Filteredtop102", Filteredtop10[2])
+    // }else if (Filteredtop10.length === 4){ 
+    //  document.getElementById("3").innerHTML = JSON.stringify(Filteredtop10[3]);
+    //  console.log("Filteredtop103", Filteredtop10[3])
+    // }else if (Filteredtop10.length === 5){
+    //  document.getElementById("4").innerHTML = JSON.stringify(Filteredtop10[4]); 
+    //  console.log("Filteredtop104", Filteredtop10[4])
+    // }else if (Filteredtop10.length === 6){ 
+    //  document.getElementById("5").innerHTML = JSON.stringify(Filteredtop10[5]);
+    //  console.log("Filteredtop105", Filteredtop10[5])
+    // }else if (Filteredtop10.length === 7){
+    //  document.getElementById("6").innerHTML = JSON.stringify(Filteredtop10[6]);
+    //  console.log("Filteredtop106", Filteredtop10[6])
+    // }else if (Filteredtop10.length === 8){
+    //  document.getElementById("7").innerHTML = JSON.stringify(Filteredtop10[7]);
+    //  console.log("Filteredtop107", Filteredtop10[7])
+    // }else if (Filteredtop10.length === 9){
+    //  document.getElementById("8").innerHTML = JSON.stringify(Filteredtop10[8]);
+    //  console.log("Filteredtop108", Filteredtop10[8])
+    // }else if (Filteredtop10.length === 10){
+    //  document.getElementById("9").innerHTML = JSON.stringify(Filteredtop10[9]);
+    //  console.log("Filteredtop109", Filteredtop10[9])
+    // }
+     
     
     console.log("scoreboard",scoreboard);
     document.getElementById("timerResult").innerHTML = timeResult + "ms";
@@ -111,7 +119,7 @@ function reaktionsClick() {
 // PROBLEME:
 
 // farbe(Welche Farbe würde am besten passen??????)
-// undefined values wenn leaderboard gezeigt wird velleicht mit if else if else checken ob die Filteredtop10 eine bestimmte länge hat und dann bei html definieren
+// 
 
 
 //PLÄNE:
