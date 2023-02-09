@@ -7,9 +7,6 @@ window.reaktionsBtn = reaktionsBtn;
 
 var randomNumberOutput;
 var scoreboard = [];
-// var top_10 = [];
-// var Filteredtop10 = [];
-
 
 
 
@@ -29,6 +26,8 @@ function reaktionsClick() {
   let date1 = new Date();
   var time_now = date1.getTime();
   scoreboard.sort(function (a, b) { return a - b });
+
+
   function Cal_Result() {
     let date2 = new Date();
     var time_later = date2.getTime();
@@ -36,50 +35,16 @@ function reaktionsClick() {
     scoreboard.push(timeResult);  
     scoreboard.sort(function (a, b) { return a - b });
     console.log("scoreboard")
-    
-    
-    
-    
+    while (scoreboard.length >=11){
+      scoreboard.pop();
+    }
     for (let i = 0; i < scoreboard.length  ; i++){
      document.getElementById(i).innerHTML = JSON.stringify(scoreboard[i]) + " ms";
      
     }
-    while (scoreboard.length >=11){
-      scoreboard.pop;
-    }
     
-    // if (Filteredtop10.length === 1){ 
-    //  document.getElementById("0").innerHTML = JSON.stringify(Filteredtop10[0]);
-    //  console.log("Filteredtop100", Filteredtop10[0]) 
-    // }else if (Filteredtop10.length === 2){
-    //  document.getElementById("1").innerHTML = JSON.stringify(Filteredtop10[1]);
-    //  console.log("Filteredtop101", Filteredtop10[1]) 
-    // }else if (Filteredtop10.length === 3){
-    //  document.getElementById("2").innerHTML = JSON.stringify(Filteredtop10[2]);
-    //  console.log("Filteredtop102", Filteredtop10[2])
-    // }else if (Filteredtop10.length === 4){ 
-    //  document.getElementById("3").innerHTML = JSON.stringify(Filteredtop10[3]);
-    //  console.log("Filteredtop103", Filteredtop10[3])
-    // }else if (Filteredtop10.length === 5){
-    //  document.getElementById("4").innerHTML = JSON.stringify(Filteredtop10[4]); 
-    //  console.log("Filteredtop104", Filteredtop10[4])
-    // }else if (Filteredtop10.length === 6){ 
-    //  document.getElementById("5").innerHTML = JSON.stringify(Filteredtop10[5]);
-    //  console.log("Filteredtop105", Filteredtop10[5])
-    // }else if (Filteredtop10.length === 7){
-    //  document.getElementById("6").innerHTML = JSON.stringify(Filteredtop10[6]);
-    //  console.log("Filteredtop106", Filteredtop10[6])
-    // }else if (Filteredtop10.length === 8){
-    //  document.getElementById("7").innerHTML = JSON.stringify(Filteredtop10[7]);
-    //  console.log("Filteredtop107", Filteredtop10[7])
-    // }else if (Filteredtop10.length === 9){
-    //  document.getElementById("8").innerHTML = JSON.stringify(Filteredtop10[8]);
-    //  console.log("Filteredtop108", Filteredtop10[8])
-    // }else if (Filteredtop10.length === 10){
-    //  document.getElementById("9").innerHTML = JSON.stringify(Filteredtop10[9]);
-    //  console.log("Filteredtop109", Filteredtop10[9])
-    // }
-     
+    
+    
     
     console.log("scoreboard",scoreboard);
     document.getElementById("timerResult").innerHTML = timeResult + "ms";
