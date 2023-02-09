@@ -7,10 +7,10 @@ window.reaktionsBtn = reaktionsBtn;
 
 var randomNumberOutput;
 var scoreboard = [];
-var top_10 = [];
-var Filteredtop10 = [];
+// var top_10 = [];
+// var Filteredtop10 = [];
 
-console.log("Filteredtop10 init",Filteredtop10)
+
 
 
 function reaktionsBtn() {
@@ -41,23 +41,13 @@ function reaktionsClick() {
     
     
     for (let i = 0; i < scoreboard.length  ; i++){
-      // console.log("scoreboard länge",scoreboard.length);
-      top_10[i] = scoreboard[i];     
-      Filteredtop10 =top_10.filter(Number);
-      
-      // console.log("top_10[i]",i);
-
-      if (scoreboard.length =11){
-        scoreboard.pop;
-      }
-      //  Filteredtop10.filter(Boolean);
-       
      document.getElementById(i).innerHTML = JSON.stringify(scoreboard[i]) + " ms";
-     console.log("i",i);
+     
     }
-    console.log("FilterTop 10 nach For Schleife",Filteredtop10)
-    console.log("FilteredTop 10 länge", Filteredtop10.length)
-    top_10.filter(Number);
+    while (scoreboard.length >=11){
+      scoreboard.pop;
+    }
+    
     // if (Filteredtop10.length === 1){ 
     //  document.getElementById("0").innerHTML = JSON.stringify(Filteredtop10[0]);
     //  console.log("Filteredtop100", Filteredtop10[0]) 
